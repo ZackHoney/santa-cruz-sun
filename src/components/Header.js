@@ -15,7 +15,10 @@ export const Header = () => {
       <header id="masthead" className="site-header">
         <div className="header-content">
           <div className="header-logo">
-            <a href="/" id="logo" onClick={(e) => e.preventDefault()}>
+            <a href="/" id="logo" onclick="document.location=/home'.html';return false;" 
+            // onClick={(e) => e.preventDefault()} 
+            // gotta figure out how to implement this^^ while keeping my original onClick that return to home on logo click
+            >
               <img src={Logo} alt="logo" />
             </a>
             <h1 className="site-title">Santa Cruz Sun LLC, CCB#249418</h1>
