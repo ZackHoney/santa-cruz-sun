@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-<<<<<<< HEAD
-import "./featuredGallery.css";
-=======
 import "./featured-gallery.css";
->>>>>>> b68f94c4aeb02017e3b37f839dfaadc5d67eb87c
 
 // Importing images using destructuring for clarity
 import Image1 from "../../assets/images/FB_IMG_1609818291318_Original.jpeg";
