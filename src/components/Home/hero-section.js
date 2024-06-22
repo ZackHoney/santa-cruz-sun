@@ -1,21 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./hero.css";
+import "../../css/hero-section.css";
 
-export const Hero = () => {
+const Hero = () => {
   return (
-    <section className="hero">
+    <header className="hero">
       <div className="wrapper">
         <div className="contrast-element">
           <h1>Santa Cruz Sun</h1>
           <p>Building Your Dreams Into Reality</p>
-          <button>
+          <button aria-label="Get a free estimate">
             <Link id="link" to="/contact">
               Free Estimate
             </Link>
           </button>
         </div>
       </div>
-    </section>
+    </header>
   );
 };
+
+export default Hero;
