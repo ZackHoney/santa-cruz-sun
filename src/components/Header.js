@@ -27,9 +27,10 @@ const Header = () => {
     <header id="masthead" className={`site-header ${isSticky ? "sticky" : ""}`}>
       <div className="header-content">
         <div className="header-logo">
-          <Link to="/" id="logo">
-            <img src={Logo} alt="Santa Cruz Sun LLC Logo" />
-          </Link>
+          <a href="/" id="logo">
+            <img src={Logo} alt="Santa Cruz Sun LLC Logo"
+            className="photo" />
+          </a>
           <h1 className="site-title">Santa Cruz Sun</h1>
         </div>
         <button
