@@ -173,10 +173,6 @@
     transition: transform 0.3s ease;
 }
 
-.image-tile:hover {
-    transform: scale(1.05);
-}
-
 .image-tile img {
     width: 100%;
     height: 100%;
@@ -184,10 +180,44 @@
     border-radius: 8px;
 }
 
+.image-tile:hover {
+    transform: scale(1.05);
+}
+
+.image-gallery-wrapper {
+    position: relative;
+    padding-bottom: 30px;
+    /* Add some padding for the dots */
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 .modal-content {
     position: relative;
-    width: 90vw;
-    max-width: 1200px;
+    width: auto;
+    max-width: 90vw;
     max-height: 90vh;
     margin: auto;
     background: white;
@@ -263,10 +293,20 @@
     }
 
     .navigation-btn svg {
-       display: none;
+        display: none;
     }
 
     .image-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .gallery-dots {
+        bottom: 5px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        margin: 0 3px;
     }
 }
