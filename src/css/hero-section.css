@@ -1,15 +1,15 @@
 :root {
-    --primary-color: #ED6F33;
-    --hover-color: #4FBBEB;
-    --text-color: black;
-    --bg-opacity: 0.75;
+    --hero-section-primary-color: #ED6F33;
+    --hero-section-hover-color: #4FBBEB;
+    --hero-section-text-color: #333;
+    --hero-section-bg-opacity: 0.75;
 }
 
 .hero {
     text-align: center;
     padding: 4rem 2rem;
-    background: url('../assets/images/FB_IMG_1609818258950_Original.jpeg') center/cover no-repeat;
-    color: var(--text-color);
+    background: url('../assets/images/Images\ Resize.png') center/cover no-repeat;
+    color: var(--hero-section-text-color);
 }
 
 .wrapper {
@@ -18,7 +18,7 @@
 }
 
 .contrast-element {
-    background-color: rgba(255, 255, 255, var(--bg-opacity));
+    background-color: rgba(255, 255, 255, var(--hero-section-bg-opacity));
     border-radius: 0.375rem;
     padding: 2rem 4rem;
     margin: 15vh auto;
@@ -26,45 +26,58 @@
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+.hero img {
+    max-height: 220px;
+    width: auto;
+    max-width: 100%;
 }
 
 .hero p {
-    font-size: 1.25rem;
+    color: var(--hero-section-text-color);
+    font-weight: bold;
+    font-size: clamp(1rem, 4vw, 1.75rem);
     margin-bottom: 2rem;
+    margin-top: 0px;
 }
 
-.hero button {
-    width: 10rem;
+.cta-button {
+    display: inline-block;
     padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    background-color: var(--primary-color);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    background-color: var(--hero-section-primary-color);
+    color: white;
+    text-decoration: none;
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 1rem;
 }
 
-#link {
-    color: white;
-    text-decoration: none;
+.cta-button:hover {
+    background-color: var(--hero-section-hover-color);
+    transform: translateY(-2px);
 }
 
-.hero button:hover {
-    background-color: var(--hover-color);
+.cta-button:active {
+    transform: translateY(0);
 }
 
 @media (max-width: 768px) {
     .contrast-element {
         padding: 1.5rem 2rem;
     }
+}
 
-    .hero h1 {
-        font-size: 2rem;
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 1rem;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .contrast-element {
+        padding: 1rem;
     }
 }
