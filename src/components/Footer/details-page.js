@@ -65,7 +65,7 @@ const Details = () => {
   return (
     <div className="details-container">
       <div className="center">
-        <a href="/" id="bottle">
+        <a href="/" id="logo">
           <img src={Logo} alt="Santa Cruz Sun LLC Logo" className="photo" />
         </a>
 
