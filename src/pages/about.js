@@ -8,11 +8,7 @@ const About = () => {
       <div className="about-cards">
         <div className="about-card">
           <p>
-            Lorem a;lskdjf ;alskj fd;lkj soiejf dsn ovid foeinfd soien fodis
-            foeinf dovsind osiefn dolsvn soidne oifds vidfn soleif vosine foiv
-            sodinfe sfoidsnv soien esofid sovis eoifj lskdjfowseif osidknfosien
-            fdosidmn fosdinf sopeif sldkfnos ienf soeifnd slieknflsdkfoise
-            nnfosidnf soeifndlskfnsopie fnmsldfna;sleoifjd fsoeif{" "}
+           We are a woman owned, local, licensed, bonded, and insured General Contracting Company. We are located in Coos Bay and service all surrounding areas including Reedsport, Coquille, Powers, Myrtle Point, Lakeside, North Bend and more! We specialize in Bathroom and Kitchen Remodels, Decks, and She-Sheds/Man-Caves. Contact us today with any inquries about any project you may want completed! 
           </p>
         </div>
       </div>

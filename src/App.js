@@ -7,7 +7,7 @@ const Home = lazy(() => import("./pages/Home.js"));
 const Gallery = lazy(() => import("./pages/gallery.js"));
 const About = lazy(() => import("./pages/about.js"));
 const ContactForm = lazy(() => import("./pages/contact.js"));
-const Login = lazy(() => import("./components/login.js"));
+// const Login = lazy(() => import("./components/login.js"));
 const ErrorPage = lazy(() => import("./pages/error-page.js"));
 
 const App = () => (
@@ -18,7 +18,7 @@ const App = () => (
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactForm />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Suspense>
