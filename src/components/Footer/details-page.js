@@ -24,7 +24,7 @@ const useMediaQuery = (query) => {
 
 const Details = () => {
   const isMobile = useMediaQuery("(max-width: 844px)");
-  const email = "kalebrupe17@gmail.com";
+  const email = "zhoney466@gmail.com";
   const subject = encodeURIComponent("Inquiry here!");
   const body = encodeURIComponent(
     "Put your inquiries or questions here. We will get back to you asap."
