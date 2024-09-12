@@ -11,8 +11,7 @@ const ContactForm = () => {
     reset,
   } = useForm({
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      name: "",
       email: "",
       phone: "",
       message: "",
@@ -77,42 +76,23 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
           <div className="form-group-container">
             <div className="form-group">
-              <label htmlFor="firstName">First Name:</label>
+              <label htmlFor="name">Full Name:</label>
               <input
-                id="firstName"
-                {...register("firstName", {
-                  required: "First name is required",
+                id="name"
+                {...register("name", {
+                  required: "Full name is required",
                   minLength: {
                     value: 2,
-                    message: "First name must be at least 2 characters long.",
+                    message: "Full name must be at least 2 characters long.",
                   },
                   maxLength: {
-                    value: 32,
-                    message: "First name cannot exceed 32 characters.",
+                    value: 50,
+                    message: "Full name cannot exceed 50 characters.",
                   },
                 })}
-                placeholder="First Name"
+                placeholder="Full Name"
               />
-              {errors.firstName && <p>{errors.firstName.message}</p>}
-            </div>
-            <div className="form-group">
-              <label htmlFor="lastName">Last Name:</label>
-              <input
-                id="lastName"
-                {...register("lastName", {
-                  required: "Last name is required",
-                  minLength: {
-                    value: 2,
-                    message: "Last name must be at least 2 characters long.",
-                  },
-                  maxLength: {
-                    value: 32,
-                    message: "Last name cannot exceed 32 characters.",
-                  },
-                })}
-                placeholder="Last Name"
-              />
-              {errors.lastName && <p>{errors.lastName.message}</p>}
+              {errors.name && <p>{errors.name.message}</p>}
             </div>
           </div>
           <div className="form-group">
