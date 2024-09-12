@@ -26,11 +26,11 @@ const ContactForm = () => {
 
 
   const sendEmail = useCallback((data) => {
-    const serviceID = "service_rv66zp1";
-    const templateID = "template_o0s4yot";
+    const serviceID = "service_h7bu7rv";
+    const templateID = "template_qjs0w0v";
 
     emailjs.init({
-      publicKey: "hohx4dG5zc1Gehn9H",
+      publicKey: "G7tB2xHkSUPcfeuIH",
       blockHeadless: false,
       limitRate: {
         id: "app",
