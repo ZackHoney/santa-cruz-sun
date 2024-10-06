@@ -15,6 +15,8 @@ const ServiceItem = React.memo(({ service, isExpanded, onClick }) => (
     </div>
     <div className="service-description">
       <p>{service.description}</p>
+      <img src={service.image1} alt=''></img>
+      <img src={service.image2} alt=''></img>
     </div>
   </div>
 ));
