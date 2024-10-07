@@ -1,5 +1,5 @@
 import Image1 from "../../../assets/images/FB_IMG_1609818291318_Original.jpeg";
-import Image2 from "../../../assets/images/FB_IMG_1609818276266_Original.jpeg";
+import Image2 from "../../../assets/images/deck1.jpeg";
 import Image3 from "../../../assets/images/FB_IMG_1609818328585_Original.jpeg";
 import Image4 from "../../../assets/images/FB_IMG_1606604883160_Original.jpeg";
 import Image5 from "../../../assets/images/FB_IMG_1609818199940_Original.jpeg";

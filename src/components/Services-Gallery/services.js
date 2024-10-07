@@ -1,62 +1,53 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const ServiceItem = React.memo(({ service, isExpanded, onClick }) => (
-  <div
-    className={`service-item ${isExpanded ? "expanded" : ""}`}
-    onClick={onClick}
-    tabIndex={0}
-    role="button"
-    aria-expanded={isExpanded}
-    onKeyDown={(e) => e.key === "Enter" && onClick()}
-  >
-    <div className="service-header">
-      <h3>{service.title}</h3>
-      <span className="service-arrow">&#9656;</span>
-    </div>
-    <div className="service-description">
-      <p>{service.description}</p>
-      <img src={service.image1} alt=''></img>
-      <img src={service.image2} alt=''></img>
-    </div>
-  </div>
-));
-
-const Services = ({ services }) => {
-  const [expandedService, setExpandedService] = useState(null);
-  const servicesSectionRef = useRef(null);
-
-  const toggleService = (index) => {
-    setExpandedService(expandedService === index ? null : index);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        servicesSectionRef.current &&
-        !servicesSectionRef.current.contains(event.target)
-      ) {
-        setExpandedService(null);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
+ const Services = () => {
   return (
-    <section className="services-section" ref={servicesSectionRef}>
+    <section className="services-body">
       <h2>Our Services</h2>
-      <div className="services-grid">
-        {services.map((service, index) => (
-          <ServiceItem
-            key={index}
-            service={service}
-            isExpanded={expandedService === index}
-            onClick={() => toggleService(index)}
-          />
-        ))}
+    <div className="services-section">
+        <div className={'service-item'}>
+          <Link to="/decks" onClick={() => window.scrollTo(0, 0)}>
+            <div className="service-header" >
+              <h3>Decks</h3>
+            </div>
+          </Link>
+        </div>
+        <div className={'service-item'}>
+          <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+            <div className="service-header" >
+              <h3>Bathroom Remodels</h3>
+            </div>
+          </Link>
+          </div>
+          <div className={'service-item'}>
+          <Link to="/decks" onClick={() => window.scrollTo(0, 0)}>
+            <div className="service-header" >
+              <h3>Kitchen Remodels</h3>
+            </div>
+          </Link>
+        </div>
+        <div className={'service-item'}>
+          <Link to="/decks" onClick={() => window.scrollTo(0, 0)}>
+            <div className="service-header" >
+              <h3>She Sheds</h3>
+            </div>
+          </Link>
+        </div>
+        <div className={'service-item'}>
+          <Link to="/decks" onClick={() => window.scrollTo(0, 0)}>
+            <div className="service-header" >
+              <h3>New Construction</h3>
+            </div>
+          </Link>
+        </div>
+        <div className={'service-item'}>
+          <Link to="/decks" onClick={() => window.scrollTo(0, 0)}>
+            <div className="service-header" >
+              <h3>Flooring</h3>
+            </div>
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ const About = lazy(() => import("./pages/about.js"));
 const ContactForm = lazy(() => import("./pages/contact.js"));
 // const Login = lazy(() => import("./components/login.js"));
 const ErrorPage = lazy(() => import("./pages/error-page.js"));
+const Decks = lazy(() => import("./pages/decks.js"))
 
 const App = () => (
   <Layout>
@@ -20,6 +21,7 @@ const App = () => (
         <Route path="/contact" element={<ContactForm />} />
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="*" element={<ErrorPage />} />
+        <Route path='/decks' element={<Decks />} />
       </Routes>
     </Suspense>
   </Layout>
