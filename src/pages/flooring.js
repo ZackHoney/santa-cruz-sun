@@ -2,12 +2,12 @@ import '../css/services-gallery.css'
 import img1 from '../assets/images/deck1.jpeg'
 import img2 from '../assets/images/Kitchen Remodel.jpeg'
 
-const Decks= () => {
+const Flooring= () => {
     return(
         <section className='services-body'>
-            <h2>Decks</h2>
+            <h2>Flooring</h2>
             
-            <p className='service-description'>BBQ season is here! Let us build an outdoor haven for your family!</p>
+            <p className='service-description'>New floors will transform any space!</p>
             
             <div className='service-images-container'>
 
@@ -23,4 +23,4 @@ const Decks= () => {
     )    
 };
 
-export default Decks
+export default Flooring

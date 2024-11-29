@@ -14,37 +14,43 @@ import { Link } from "react-router-dom";
           </Link>
         </div>
         <div className={'service-item'}>
-          <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+          <Link to="/bathroom" onClick={() => window.scrollTo(0, 0)}>
             <div className="service-header" >
               <h3>Bathroom Remodels</h3>
             </div>
           </Link>
           </div>
           <div className={'service-item'}>
-          <Link to="/decks" onClick={() => window.scrollTo(0, 0)}>
+          <Link to="/kitchen" onClick={() => window.scrollTo(0, 0)}>
             <div className="service-header" >
               <h3>Kitchen Remodels</h3>
             </div>
           </Link>
         </div>
         <div className={'service-item'}>
-          <Link to="/decks" onClick={() => window.scrollTo(0, 0)}>
+          <Link to="/sheSheds" onClick={() => window.scrollTo(0, 0)}>
             <div className="service-header" >
               <h3>She Sheds</h3>
             </div>
           </Link>
         </div>
         <div className={'service-item'}>
-          <Link to="/decks" onClick={() => window.scrollTo(0, 0)}>
+          <Link to="/newConstruction" onClick={() => window.scrollTo(0, 0)}>
             <div className="service-header" >
               <h3>New Construction</h3>
             </div>
           </Link>
         </div>
         <div className={'service-item'}>
-          <Link to="/decks" onClick={() => window.scrollTo(0, 0)}>
+          <Link to="/flooring" onClick={() => window.scrollTo(0, 0)}>
             <div className="service-header" >
               <h3>Flooring</h3>
+            </div>
+          </Link>
+        </div><div className={'service-item'}>
+          <Link to="/tile" onClick={() => window.scrollTo(0, 0)}>
+            <div className="service-header" >
+              <h3>Tile</h3>
             </div>
           </Link>
         </div>
