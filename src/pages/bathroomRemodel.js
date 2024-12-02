@@ -1,6 +1,6 @@
 import '../css/services-gallery.css'
-import img1 from '../assets/images/Tile Shower.jpeg'
-import img2 from '../assets/images/image1.jpeg'
+// import img1 from '../assets/images/Tile Shower.jpeg'
+// import img2 from '../assets/images/image1.jpeg'
 
 
 const bathroomRemodel = () => {
@@ -13,10 +13,10 @@ const bathroomRemodel = () => {
             <div className='service-images-container'>
 
             <div className='service-image'>
-                <img src={img1} alt='Tile Shower'/>
+                {/* <img src={img1} alt='Tile Shower'/> */}
             </div>
             <div className='service-image'>
-                <img src={img2} alt='Tile Shower'/>
+                {/* <img src={img2} alt='Tile Shower'/> */}
             </div>
                 
             </div>
