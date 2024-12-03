@@ -1,4 +1,5 @@
 import '../css/services-gallery.css'
+import img1 from '../assets/images/Kitchen-Remodels/Kitchen Remodel.png'
 
 const KitchenRemodels= () => {
     return(
@@ -10,11 +11,9 @@ const KitchenRemodels= () => {
             <div className='service-images-container'>
 
             <div className='service-image'>
-                {/* <img src={img1} alt='Deck with furniture'/> */}
+                <img src={img1} alt='Kitchen'/>
             </div>
-            <div className='service-image'>
-                {/* <img src={img2} alt='Deck with furniture'/> */}
-            </div>
+           
                 
             </div>
         </section>

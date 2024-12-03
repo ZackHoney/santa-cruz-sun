@@ -1,6 +1,7 @@
 import '../css/services-gallery.css'
-// import img1 from '../assets/images/deck1.jpeg'
-// import img2 from '../assets/images/Kitchen Remodel.jpeg'
+import img1 from '../assets/images/New-Construction/New Basement.jpg'
+import img2 from '../assets/images/New-Construction/New Kitchen.jpeg'
+import img3 from '../assets/images/New-Construction/New Kitchen.jpg'
 
 const NewConstruction= () => {
     return(
@@ -12,10 +13,15 @@ const NewConstruction= () => {
             <div className='service-images-container'>
 
             <div className='service-image'>
-                {/* <img src={img1} alt='Deck with furniture'/> */}
+                <img src={img1} alt='Deck with furniture'/>
             </div>
+
             <div className='service-image'>
-                {/* <img src={img2} alt='Deck with furniture'/> */}
+                <img src={img2} alt='Deck with furniture'/>
+            </div>
+
+            <div className='service-image'>
+                <img src={img3} alt='Deck with furniture'/>
             </div>
                 
             </div>
