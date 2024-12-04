@@ -1,87 +1,87 @@
-import '../css/services-gallery.css'
-import img1 from '../assets/images/Tile/Tile-Floor.jpg'
-import img2 from '../assets/images/Tile/Tile-Floor(2).jpg'
-import img3 from '../assets/images/Tile/Tile-Backsplash.jpg'
-import img4 from '../assets/images/Tile/Tile-Backsplash(2).jpg'
-import img5 from '../assets/images/Tile/Tile-Shower.jpg'
-import img6 from '../assets/images/Tile/Tile-Shower(2).jpg'
-import img7 from '../assets/images/Tile/Tile-Shower(3).jpeg'
-import img8 from '../assets/images/Tile/Tile-Shower(4).jpg'
-import img9 from '../assets/images/Tile/Tile-Shower(5).jpg'
-import img10 from '../assets/images/Tile/Tile-Shower(6).jpg'
-import img11 from '../assets/images/Tile/Tile-Shower(7).jpeg'
-import img12 from '../assets/images/Tile/Tile-Shower(8).jpeg'
-import img13 from '../assets/images/Tile/Tile-Shower(9).jpeg'
-import img14 from '../assets/images/Tile/Tile-Shower(10).jpeg'
+import React, { useState, useCallback, useMemo }  from "react"; 
+import Modal from "react-modal";
+import "../css/services-gallery.css";
+import { images } from "../components/Services-Gallery/tile";
+import ImageGallery from "../components/Services-Gallery/image-gallery";
 
-const Tile= () => {
-    return(
-        <section className='services-body'>
-            <h2>Tile</h2>
-            
-            <p className='service-description'>Let us transform your floor into a beautiful tiled space!</p>
-            
-            <div className='service-images-container'>
+Modal.setAppElement("#root");
 
-            <div className='service-image'>
-                <img src={img1} alt=''/>
-            </div>
+const Gallery = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+  const [visibleStart, setVisibleStart] = useState(0);
+  const visibleCount = 4;
 
-            <div className='service-image'>
-                <img src={img2} alt=''/>
-            </div>
+  const openModal = useCallback((image) => {
+    setCurrentImage(image);
+    setModalIsOpen(true);
+  }, []);
 
-            <div className='service-image'>
-                <img src={img3} alt=''/>
-            </div>
+  const closeModal = useCallback(() => {
+    setModalIsOpen(false);
+    setCurrentImage(null);
+  }, []);
 
-            <div className='service-image'>
-                <img src={img4} alt=''/>
-            </div>
+  const nextImages = useCallback(() => {
+    setVisibleStart((prev) =>
+      Math.min(prev + visibleCount, images.length - visibleCount)
+    );
+  }, []);
 
-            <div className='service-image'>
-                <img src={img5} alt=''/>
-            </div>
+  const prevImages = useCallback(() => {
+    setVisibleStart((prev) => Math.max(prev - visibleCount, 0));
+  }, []);
 
-            <div className='service-image'>
-                <img src={img6} alt=''/>
-            </div>
+  const visibleImages = useMemo(
+    () => images.slice(visibleStart, visibleStart + visibleCount),
+    [visibleStart]
+  );
 
-            <div className='service-image'>
-                <img src={img7} alt=''/>
-            </div>
+  return (
+    <div className="page-wrapper">
+      <header className="page-header">
+        <h1>Tile</h1>
+        <p>Update any space with Tile!</p>
+      </header>
 
-            <div className='service-image'>
-                <img src={img8} alt=''/>
-            </div>
 
-            <div className='service-image'>
-                <img src={img9} alt=''/>
-            </div>
+      <section className="gallery-section">
+        <ImageGallery
+          images={visibleImages}
+          visibleStart={visibleStart}
+          totalImages={images.length}
+          visibleCount={visibleCount}
+          onPrev={prevImages}
+          onNext={nextImages}
+          onImageClick={openModal}
+        />
+      </section>
 
-            <div className='service-image'>
-                <img src={img10} alt=''/>
-            </div>
-
-            <div className='service-image'>
-                <img src={img11} alt=''/>
-            </div>
-
-            <div className='service-image'>
-                <img src={img12} alt=''/>
-            </div>
-
-            <div className='service-image'>
-                <img src={img13} alt=''/>
-            </div>
-
-            <div className='service-image'>
-                <img src={img14} alt=''/>
-            </div>
-                
-            </div>
-        </section>
-    )    
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="modal-content"
+        overlayClassName="modal-overlay"
+      >
+        {currentImage && (
+          <div>
+            <button
+              className="modal-close-btn"
+              onClick={closeModal}
+              aria-label="Close modal"
+            >
+              &times;
+            </button>
+            <img
+              src={currentImage.src}
+              alt={currentImage.alt}
+              className="modal-image"
+            />
+          </div>
+        )}
+      </Modal>
+    </div>
+  );
 };
 
-export default Tile
+export default React.memo(Gallery);

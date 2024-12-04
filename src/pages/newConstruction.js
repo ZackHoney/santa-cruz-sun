@@ -1,32 +1,88 @@
-import '../css/services-gallery.css'
-import img1 from '../assets/images/New-Construction/New Basement.jpg'
-import img2 from '../assets/images/New-Construction/New Kitchen.jpeg'
-import img3 from '../assets/images/New-Construction/New Kitchen.jpg'
+import React, { useState, useCallback, useMemo }  from "react"; 
+import Modal from "react-modal";
+import "../css/services-gallery.css";
+import { images } from "../components/Services-Gallery/newConstruction";
+import ImageGallery from "../components/Services-Gallery/image-gallery";
 
-const NewConstruction= () => {
-    return(
-        <section className='services-body'>
-            <h2>New Construction</h2>
-            
-            <p className='service-description'>Building new structures with precision and expertise.</p>
-            
-            <div className='service-images-container'>
+Modal.setAppElement("#root");
 
-            <div className='service-image'>
-                <img src={img1} alt='Deck with furniture'/>
-            </div>
+const Gallery = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+  const [visibleStart, setVisibleStart] = useState(0);
+  const visibleCount = 4;
 
-            <div className='service-image'>
-                <img src={img2} alt='Deck with furniture'/>
-            </div>
+  const openModal = useCallback((image) => {
+    setCurrentImage(image);
+    setModalIsOpen(true);
+  }, []);
 
-            <div className='service-image'>
-                <img src={img3} alt='Deck with furniture'/>
-            </div>
-                
-            </div>
-        </section>
-    )    
+  const closeModal = useCallback(() => {
+    setModalIsOpen(false);
+    setCurrentImage(null);
+  }, []);
+
+  const nextImages = useCallback(() => {
+    setVisibleStart((prev) =>
+      Math.min(prev + visibleCount, images.length - visibleCount)
+    );
+  }, []);
+
+  const prevImages = useCallback(() => {
+    setVisibleStart((prev) => Math.max(prev - visibleCount, 0));
+  }, []);
+
+  const visibleImages = useMemo(
+    () => images.slice(visibleStart, visibleStart + visibleCount),
+    [visibleStart]
+  );
+
+  return (
+    <div className="page-wrapper">
+      <header className="page-header">
+        <h1>New Construction</h1>
+        <p>Building new structures with precision and expertise.
+        </p>
+      </header>
+
+
+      <section className="gallery-section">
+        <ImageGallery
+          images={visibleImages}
+          visibleStart={visibleStart}
+          totalImages={images.length}
+          visibleCount={visibleCount}
+          onPrev={prevImages}
+          onNext={nextImages}
+          onImageClick={openModal}
+        />
+      </section>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="modal-content"
+        overlayClassName="modal-overlay"
+      >
+        {currentImage && (
+          <div>
+            <button
+              className="modal-close-btn"
+              onClick={closeModal}
+              aria-label="Close modal"
+            >
+              &times;
+            </button>
+            <img
+              src={currentImage.src}
+              alt={currentImage.alt}
+              className="modal-image"
+            />
+          </div>
+        )}
+      </Modal>
+    </div>
+  );
 };
 
-export default NewConstruction
+export default React.memo(Gallery);

@@ -1,58 +1,87 @@
-import '../css/services-gallery.css'
-import img1 from '../assets/images/Bathroom-Remodels/bathroom-remodel.jpg'
-import img2 from '../assets/images/Bathroom-Remodels/Bathroom-Remodel(2).jpeg'
-import img3 from '../assets/images/Bathroom-Remodels/bathroom-remodel(3).jpg'
-import img4 from '../assets/images/Bathroom-Remodels/bathroom-remodel(4).jpg'
-import img5 from '../assets/images/Bathroom-Remodels/bathroom-remodel(5).jpg'
-import img6 from '../assets/images/Bathroom-Remodels/bathroom-remodel(6).jpg'
-import img7 from '../assets/images/Bathroom-Remodels/Bathroom-Remodel(7).jpeg'
-import img8 from '../assets/images/Bathroom-Remodels/Old-Shower.jpg'
+import React, { useState, useCallback, useMemo }  from "react"; 
+import Modal from "react-modal";
+import "../css/services-gallery.css";
+import { images } from "../components/Services-Gallery/bathroomRemodelImg";
+import ImageGallery from "../components/Services-Gallery/image-gallery";
 
+Modal.setAppElement("#root");
 
+const Gallery = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+  const [visibleStart, setVisibleStart] = useState(0);
+  const visibleCount = 4;
 
-const bathroomRemodel = () => {
+  const openModal = useCallback((image) => {
+    setCurrentImage(image);
+    setModalIsOpen(true);
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalIsOpen(false);
+    setCurrentImage(null);
+  }, []);
+
+  const nextImages = useCallback(() => {
+    setVisibleStart((prev) =>
+      Math.min(prev + visibleCount, images.length - visibleCount)
+    );
+  }, []);
+
+  const prevImages = useCallback(() => {
+    setVisibleStart((prev) => Math.max(prev - visibleCount, 0));
+  }, []);
+
+  const visibleImages = useMemo(
+    () => images.slice(visibleStart, visibleStart + visibleCount),
+    [visibleStart]
+  );
+
   return (
-    <section className='services-body'>
-            <h2>Bathroom Remodels</h2>
-            
-            <p className='service-description'>Transform your old bathroom into a spa!</p>
-            
-            <div className='service-images-container'>
+    <div className="page-wrapper">
+      <header className="page-header">
+        <h1>Bathroom Remodels</h1>
+        <p>Transform your old bathroom into a spa!</p>
+      </header>
 
-            <div className='service-image'>
-                <img src={img1} alt='Tile Shower'/>
-            </div>
 
-            <div className='service-image'>
-                <img src={img2} alt='Tile Shower'/>
-            </div>
+      <section className="gallery-section">
+        <ImageGallery
+          images={visibleImages}
+          visibleStart={visibleStart}
+          totalImages={images.length}
+          visibleCount={visibleCount}
+          onPrev={prevImages}
+          onNext={nextImages}
+          onImageClick={openModal}
+        />
+      </section>
 
-            <div className='service-image'>
-                <img src={img3} alt='Tile Shower'/>
-            </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="modal-content"
+        overlayClassName="modal-overlay"
+      >
+        {currentImage && (
+          <div>
+            <button
+              className="modal-close-btn"
+              onClick={closeModal}
+              aria-label="Close modal"
+            >
+              &times;
+            </button>
+            <img
+              src={currentImage.src}
+              alt={currentImage.alt}
+              className="modal-image"
+            />
+          </div>
+        )}
+      </Modal>
+    </div>
+  );
+};
 
-            <div className='service-image'>
-                <img src={img4} alt='Tile Shower'/>
-            </div>
-
-            <div className='service-image'>
-                <img src={img5} alt='Tile Shower'/>
-            </div>
-
-            <div className='service-image'>
-                <img src={img6} alt='Tile Shower'/>
-            </div>
-
-            <div className='service-image'>
-                <img src={img7} alt='Tile Shower'/>
-            </div>
-
-            <div className='service-image'>
-                <img src={img8} alt='Tile Shower'/>
-            </div>    
-            </div>
-        </section>
-  )
-}
-
-export default bathroomRemodel
+export default React.memo(Gallery);
