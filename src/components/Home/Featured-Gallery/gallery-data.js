@@ -1,11 +1,11 @@
-import Image1 from "../../../assets/images/FB_IMG_1609818291318_Original.jpeg";
-import Image2 from "../../../assets/images/FB_IMG_1609818276266_Original.jpeg";
-import Image3 from "../../../assets/images/FB_IMG_1609818328585_Original.jpeg";
-import Image4 from "../../../assets/images/FB_IMG_1606604883160_Original.jpeg";
-import Image5 from "../../../assets/images/FB_IMG_1609818199940_Original.jpeg";
-import Image6 from "../../../assets/images/FB_IMG_1609818315477_Original.jpeg";
-import Image7 from "../../../assets/images/20210707_155857_Original.jpeg";
-import Image8 from "../../../assets/images/resized_img_1.png";
+import Image1 from "../../../assets/images/Decks/deck1.jpeg";
+import Image2 from "../../../assets/images/Kitchen-Remodels/Kitchen Remodel.png";
+import Image3 from "../../../assets/images/Bathroom-Remodels/bathroom-remodel.jpg";
+import Image4 from "../../../assets/images/Tile/Tile-Shower(10).jpeg";
+import Image5 from "../../../assets/images/Remodels/Basement Family.jpeg";
+import Image6 from "../../../assets/images/New-Construction/New Kitchen.jpeg";
+import Image7 from "../../../assets/images/New-Construction/New Kitchen.jpg";
+import Image8 from "../../../assets/images/Tile/Tile-Backsplash.jpg";
 
 export const images = [
   { src: Image1, alt: "Exterior view of a modern house with large windows" },

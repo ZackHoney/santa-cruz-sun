@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo }  from "react"; 
 import Modal from "react-modal";
 import "../css/services-gallery.css";
 import { images } from "../components/Services-Gallery/gallery-img";
