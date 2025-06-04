@@ -91,7 +91,7 @@ const Header = () => {
             </li>
             <li>
               <Link to="/gallery" onClick={onClick}>
-                Services & Photos
+                Gallery
               </Link>
             </li>
             <li>

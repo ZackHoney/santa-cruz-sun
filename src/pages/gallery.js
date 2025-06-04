@@ -2,8 +2,6 @@ import React, { useState, useCallback, useMemo }  from "react";
 import Modal from "react-modal";
 import "../css/services-gallery.css";
 import { images } from "../components/Services-Gallery/gallery-img";
-import { services } from "../components/Services-Gallery/services-list";
-import Services from "../components/Services-Gallery/services";
 import ImageGallery from "../components/Services-Gallery/image-gallery";
 
 Modal.setAppElement("#root");
@@ -41,15 +39,8 @@ const Gallery = () => {
 
   return (
     <div className="page-wrapper">
-      <header className="page-header">
-        <h1>Construction & Renovations</h1>
-        <p>Transforming Spaces, Building Dreams</p>
-      </header>
-
-      <Services services={services} />
-
       <section className="gallery-section">
-        <h2>Our Work</h2>
+        <h2>Gallery</h2>
         <ImageGallery
           images={visibleImages}
           visibleStart={visibleStart}

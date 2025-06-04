@@ -35,13 +35,6 @@ import { Link } from "react-router-dom";
           </Link>
         </div>
         <div className={'service-item'}>
-          <Link to="/newConstruction" onClick={() => window.scrollTo(0, 0)}>
-            <div className="service-header" >
-              <h3>New Construction</h3>
-            </div>
-          </Link>
-        </div>
-        <div className={'service-item'}>
           <Link to="/flooring" onClick={() => window.scrollTo(0, 0)}>
             <div className="service-header" >
               <h3>Flooring</h3>
