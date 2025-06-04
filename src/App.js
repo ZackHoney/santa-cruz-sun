@@ -13,7 +13,6 @@ const Decks = lazy(() => import("./pages/decks.js"))
 const Bathroom = lazy(() => import("./pages/bathroomRemodel.js"))
 const Kitchen = lazy(() => import('./pages/kitchenRemodel.js'))
 const SheSheds = lazy(() => import('./pages/sheSheds.js'))
-const NewConstruction = lazy(() => import('./pages/newConstruction.js'))
 const Flooring = lazy(() => import('./pages/flooring.js'))
 const Tile = lazy(() => import('./pages/tile.js'))
 
@@ -31,7 +30,6 @@ const App = () => (
         <Route path='/bathroom' element={<Bathroom />} />
         <Route path='/kitchen' element={<Kitchen />} />
         <Route path='/sheSheds' element={<SheSheds />} />
-        <Route path='/newConstruction' element={<NewConstruction />} />
         <Route path='/tile' element={<Tile />} />
         <Route path='/flooring' element={<Flooring />} />
       </Routes>

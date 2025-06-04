@@ -40,6 +40,8 @@ const Gallery = () => {
   return (
     <div className="page-wrapper">
       <header className="page-header">
+       <button className="go-back" onClick={e => window.location.href='/'}>Go Back Home</button>
+
         <h1>She Sheds/Sheds</h1>
         <p>Let us build a private retreat or just some extra storage space!</p>
       </header>

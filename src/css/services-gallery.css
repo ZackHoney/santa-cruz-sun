@@ -14,6 +14,15 @@
     padding: 20px;
 }
 
+.go-back{
+    background-color: #ED6F33;
+    font-size: large;
+    border-radius: 5px;
+    border-color: #ED6F33;
+    font-weight: 600;
+    font-style: italic;
+}
+
 .page-header {
     text-align: center;
     margin-bottom: 40px;
