@@ -3,25 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/logos/Santa-Cruz-Construction-font-large-bold.png";
 import "../css/header.css";
 
-const useMediaQuery = (query) => {
-  const [matches, setMatches] = useState(window.matchMedia(query).matches);
-
-  useEffect(() => {
-    const mediaQueryList = window.matchMedia(query);
-    const documentChangeHandler = () => setMatches(mediaQueryList.matches);
-
-    mediaQueryList.addEventListener("change", documentChangeHandler);
-
-    return () => {
-      mediaQueryList.removeEventListener("change", documentChangeHandler);
-    };
-  }, [query]);
-
-  return matches;
-};
-
 const Header = () => {
-  const isMobile = useMediaQuery("(max-width: 1180px)");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const menuRef = useRef(null);
