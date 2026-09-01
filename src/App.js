@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout.js";
 import "./css/app.css";
-
+//
 const Home = lazy(() => import("./pages/Home.js"));
 const Gallery = lazy(() => import("./pages/gallery.js"));
 const About = lazy(() => import("./pages/about.js"));
